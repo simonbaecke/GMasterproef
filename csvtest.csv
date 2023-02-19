@@ -1,3 +1,6 @@
-id,value
-1,280
-2,150
+id,source,value,description
+a,bim,300,opp groendak
+b,bim,450,opp dak
+c,?,éénsgezinswoning,type gebouw
+d,?,1,aantal
+e,
