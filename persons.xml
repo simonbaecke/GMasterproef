@@ -1,0 +1,22 @@
+<personlist>
+    <person id='1' nickname='lul'>
+        <name>John Doe</name>
+        <age>35</age>
+        <address>
+            <street>123 Main St.</street>
+            <city>Anytown</city>
+            <state>CA</state>
+            <zip>12345</zip>
+        </address>
+    </person>
+    <person id='2' nickname='Jimbo'>
+        <name>Jim Halpert</name>
+        <age>5</age>
+        <address>
+            <street>456 Ms St.</street>
+            <city>Ghent</city>
+            <state>BN</state>
+            <zip>9000</zip>
+        </address>
+    </person>
+</personlist>
