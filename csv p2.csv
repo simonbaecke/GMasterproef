@@ -1,3 +1,7 @@
 id,source,value,description
 a,gis,300,opp perceel
 b,gis,1,grondwinwatergebied
+c,bim,120,nieuwe verharde oppervlakte
+d,bim,0,bestaande verharde oppervlakte onaangesloten
+e,bim,300,nieuwe dakoppervlakte
+f,bim,0,bestaande dakoppervlakte onaangesloten
