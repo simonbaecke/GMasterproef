@@ -2,7 +2,7 @@ from urllib.request import urlopen
 import csv
 import pandas as pd
 
-url = "https://raw.githubusercontent.com/simonbaecke/Masterproef/main/csvtest.csv"
+url = "https://raw.githubusercontent.com/simonbaecke/Masterproef/main/csvtest_p2.csv"
 dataframe=pd.read_csv(url)
 print(dataframe)
 
