@@ -1,12 +1,9 @@
-import xml.etree.ElementTree as ET
+import html
 from bs4 import BeautifulSoup
-
-import os
-print (os.getcwd())
 
 from csvtest import idvalue
 
-bestand = open('diagramv2.bpmn','r').read()
+bestand = open('diagramv5.bpmn','r').read()
 bsdata=BeautifulSoup(bestand,'xml')
 data = bsdata.process
 
@@ -19,18 +16,29 @@ data = bsdata.process
 # print(taskslib)
 
 start = data.startEvent
-startoutgoing = start.outgoing.string
+# startoutgoing = start.outgoing.string
+print(idvalue)
 next = start
-print(next.name)
 while next.name != "endEvent":
     for content in data:
         try:
-            if content.incoming.string == startoutgoing:
+            if content.incoming.string == next.outgoing.string:
+                x = next['name'] #afhankelijk van hoe men formule opstelt ofwel verandert men eerste waarde door juiste waarde ofwel checkt men via x welke waarde moet getoestst worden aangezien dit voor de gateway komt 
                 next = content.incoming.parent
-                next = data.endEvent
+                print(next.prettify())
+                if next.name in ["exclusiveGateway","bla"]:
+                    idgateway=next['id']
+                    print(idgateway)
+                    formula = str(html.unescape(next['name']))
+                    value = idvalue[formula[0]]
+                    formula = formula.replace(formula[0],str(value))
+                    answer = str(eval(formula))
+                    nextevent = data.find('sequenceFlow',attrs = {'sourceRef' : idgateway,'name':answer})
+                    idtarget=nextevent['targetRef']
+                    next = data.find(attrs = {'id' : idtarget})
+                    print(next)
         except:
             pass
-print(next)
 
 
 
