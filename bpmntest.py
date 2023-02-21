@@ -1,9 +1,9 @@
 import html
 from bs4 import BeautifulSoup
 
-from csvtest import idvalue
+from data import idvalue
 
-bestand = open('diagramv5.bpmn','r').read()
+bestand = open('diagramv3.bpmn','r').read()
 bsdata=BeautifulSoup(bestand,'xml')
 data = bsdata.process
 
@@ -16,19 +16,21 @@ data = bsdata.process
 # print(taskslib)
 
 start = data.startEvent
-# startoutgoing = start.outgoing.string
 print(idvalue)
 next = start
 while next.name != "endEvent":
     for content in data:
         try:
-            if content.incoming.string == next.outgoing.string:
-                x = next['name'] #afhankelijk van hoe men formule opstelt ofwel verandert men eerste waarde door juiste waarde ofwel checkt men via x welke waarde moet getoestst worden aangezien dit voor de gateway komt 
-                next = content.incoming.parent
-                print(next.prettify())
-                if next.name in ["exclusiveGateway","bla"]:
+            incoming = content.find_all('incoming')
+            all_incoming = [x.string for x in incoming]
+            if next.outgoing.string in all_incoming:
+                # x = next['name'] #afhankelijk van hoe men formule opstelt ofwel verandert men eerste waarde door juiste waarde ofwel checkt men via x welke waarde moet getoestst worden aangezien dit voor de gateway komt 
+                next = content
+                # print(next.prettify()) #alle nodes buiten nodes na gateway
+                
+                #bekijken of het een gateway is, anders gewoon doorgaan
+                if next.name in ["exclusiveGateway","x","y"]:
                     idgateway=next['id']
-                    print(idgateway)
                     formula = str(html.unescape(next['name']))
                     value = idvalue[formula[0]]
                     formula = formula.replace(formula[0],str(value))
@@ -36,9 +38,11 @@ while next.name != "endEvent":
                     nextevent = data.find('sequenceFlow',attrs = {'sourceRef' : idgateway,'name':answer})
                     idtarget=nextevent['targetRef']
                     next = data.find(attrs = {'id' : idtarget})
-                    print(next)
+                    # print(next.prettify()) #node na gateway
         except:
             pass
+
+print(next.prettify())
 
 
 
