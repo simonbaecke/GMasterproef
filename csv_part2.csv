@@ -1,0 +1,11 @@
+id,source,value,description
+a,gis,300,opp perceel
+b,gis,1,grondwinwatergebied
+c,bim,120,nieuwe verharde oppervlakte
+d,bim,0,bestaande verharde oppervlakte onaangesloten
+e,bim,300,nieuwe dakoppervlakte
+f,bim,0,bestaande dakoppervlakte onaangesloten
+g,tekst,"",motivatie grotere inhoud van vereist
+h,tekst,"",motivatie kleiner volume buffer/infiltratievolume dan vereist
+i,tekst,300,voorziene infiltratieoppervlakte
+j,tekst,"",motivatie kleinere oppervlakte infiltratie dan vereist

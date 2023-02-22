@@ -46,6 +46,7 @@ while next.name != "endEvent":
             pass
 print(next.prettify())
 
+#kleuren van tasks die niet uitgevoerd worden
 for content in data:
     try:
         if content['sourceRef'] in shapecolorid and content['targetRef'] in shapecolorid:
@@ -53,7 +54,7 @@ for content in data:
     except:
         pass
 
-#kleuren van tasks die niet uitgevoerd worden
+
 for shape in graphics:
     try:
         id = shape['bpmnElement']
@@ -68,7 +69,7 @@ for shape in graphics:
     except:
         pass
 
-
+# exporteren van aangepaste bpmn
 with open("edited.bpmn","w") as new:
     new.write(str(bsdata))
 

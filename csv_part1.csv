@@ -1,0 +1,9 @@
+id,source,value,description
+a,bim,300,opp groendak
+b,bim,450,opp dak
+c,?,éénsgezinswoning,type gebouw
+d,?,1,aantal
+e,bim,160,oppervlakte gebouw
+f,?,onbekend,inhoud voorziene waterput
+g,tekst,"",motivatie nuttig hergebruik overschot water
+h,tekst,"",toepassingen gebruik water uit waterput
