@@ -1,7 +1,7 @@
 import html
 from bs4 import BeautifulSoup
 
-from data import idvalue
+from dataimport import idvalue
 print(idvalue) #check waarden van csv
 
 
@@ -23,7 +23,7 @@ while next.name != "endEvent":
             all_incoming = [x.string for x in incoming]
             if next.outgoing.string in all_incoming:
                 # x = next['name'] #afhankelijk van hoe men formule opstelt ofwel verandert men eerste waarde door juiste waarde ofwel checkt men via x welke waarde moet getoestst worden aangezien dit voor de gateway komt 
-                if next.name == "intermediateThrowEvent": #info weergeven
+                if next.name == "XXXXXXXXXXXXXXXXXX": #info weergeven
                     print(next['name'])
                 next = content
                 shapecolorid.append(next['id'])
@@ -31,7 +31,7 @@ while next.name != "endEvent":
 
 
                 #bekijken of het een gateway is, anders gewoon doorgaan
-                if next.name in ["exclusiveGateway","x","y"]:
+                if next.name in ["exclusiveGateway","intermediateThrowEvent","y"]:
                     idgateway=next['id']
                     formula = str(html.unescape(next['name']))
                     value = idvalue[formula[0]]
