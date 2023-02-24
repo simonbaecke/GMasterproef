@@ -1,0 +1,33 @@
+{
+    "LocationResult": [
+        {
+            "Municipality": "Gent",
+            "Zipcode": "9000",
+            "Thoroughfarename": "Sint-Jansvest",
+            "Housenumber": "11",
+            "ID": 1311534,
+            "FormattedAddress": "Sint-Jansvest 11, 9000 Gent",
+            "Location": {
+                "Lat_WGS84": 51.04992435898024,
+                "Lon_WGS84": 3.727633073124467,
+                "X_Lambert72": 105044.2,
+                "Y_Lambert72": 193500.74
+            },
+            "LocationType": "crab_huisnummer_manueleAanduidingVanPerceel",
+            "BoundingBox": {
+                "LowerLeft": {
+                    "Lat_WGS84": 51.04992435898024,
+                    "Lon_WGS84": 3.727633073124467,
+                    "X_Lambert72": 105044.2,
+                    "Y_Lambert72": 193500.74
+                },
+                "UpperRight": {
+                    "Lat_WGS84": 51.04992435898024,
+                    "Lon_WGS84": 3.727633073124467,
+                    "X_Lambert72": 105044.2,
+                    "Y_Lambert72": 193500.74
+                }
+            }
+        }
+    ]
+}
