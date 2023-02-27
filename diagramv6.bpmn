@@ -125,13 +125,13 @@
     </intermediateThrowEvent>
     <sequenceFlow id="Flow_0sw28pv" sourceRef="Event_0qao6lx" targetRef="Event_06zzxwj" />
     <sequenceFlow id="Flow_0k2e4xz" sourceRef="Event_0ncyzni" targetRef="Event_06zzxwj" />
-    <intermediateThrowEvent id="Event_18tocqk" name="V=1">
+    <intermediateThrowEvent id="Event_18tocqk" name="V=&#34;B&#34;">
       <incoming>Flow_0zn8yp7</incoming>
       <outgoing>Flow_1mdf9zb</outgoing>
     </intermediateThrowEvent>
     <sequenceFlow id="Flow_0zn8yp7" name="True" sourceRef="Gateway_1uk10q4" targetRef="Event_18tocqk" />
     <sequenceFlow id="Flow_1mdf9zb" sourceRef="Event_18tocqk" targetRef="Activity_1wrmroa" />
-    <intermediateThrowEvent id="Event_0eu9jlq" name="V=0">
+    <intermediateThrowEvent id="Event_0eu9jlq" name="V=&#34;I&#34;">
       <incoming>Flow_1sp7qje</incoming>
       <outgoing>Flow_1kjeltl</outgoing>
     </intermediateThrowEvent>
@@ -142,7 +142,7 @@
       <outgoing>Flow_06yady2</outgoing>
     </task>
     <sequenceFlow id="Flow_1fh7qsr" sourceRef="Event_06zzxwj" targetRef="Activity_1ju8dmk" />
-    <exclusiveGateway id="Gateway_1kw87zm" name="V==0">
+    <exclusiveGateway id="Gateway_1kw87zm" name="V==I">
       <incoming>Flow_06yady2</incoming>
       <outgoing>Flow_0jnes9y</outgoing>
       <outgoing>Flow_1oj9tit</outgoing>
@@ -315,7 +315,7 @@
       <bpmndi:BPMNShape id="BPMNShape_04i6f74" bpmnElement="Event_0eu9jlq">
         <omgdc:Bounds x="972" y="272" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="982" y="315" width="20" height="14" />
+          <omgdc:Bounds x="979" y="315" width="25" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1ju8dmk_di" bpmnElement="Activity_1ju8dmk">
@@ -325,7 +325,7 @@
       <bpmndi:BPMNShape id="Gateway_1kw87zm_di" bpmnElement="Gateway_1kw87zm" isMarkerVisible="true">
         <omgdc:Bounds x="2815" y="265" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="2828" y="322" width="26" height="14" />
+          <omgdc:Bounds x="2829" y="322" width="23" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_05ff3vx_di" bpmnElement="Activity_05ff3vx">
@@ -341,7 +341,7 @@
       <bpmndi:BPMNShape id="Event_18tocqk_di" bpmnElement="Event_18tocqk">
         <omgdc:Bounds x="972" y="142" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="981" y="185" width="20" height="14" />
+          <omgdc:Bounds x="976" y="185" width="29" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_07hsmxp_di" bpmnElement="Activity_07hsmxp">
