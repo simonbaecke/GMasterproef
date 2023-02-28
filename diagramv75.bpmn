@@ -151,7 +151,7 @@
     <endEvent id="Event_1b83gia" name="Buffervoorziening">
       <incoming>Flow_0jnes9y</incoming>
     </endEvent>
-    <sequenceFlow id="Flow_0jnes9y" name="False" sourceRef="Gateway_1kw87zm" targetRef="Event_1b83gia" />
+    <sequenceFlow id="Flow_0jnes9y" name="True" sourceRef="Gateway_1kw87zm" targetRef="Event_1b83gia" />
     <task id="Activity_05ff3vx" name="Voorziene oppervlakte infiltratievoorziening?">
       <incoming>Flow_1oj9tit</incoming>
       <outgoing>Flow_07wagz7</outgoing>
@@ -161,7 +161,7 @@
         <targetRef>Property_0ic9fio</targetRef>
       </dataInputAssociation>
     </task>
-    <sequenceFlow id="Flow_1oj9tit" name="True" sourceRef="Gateway_1kw87zm" targetRef="Activity_05ff3vx" />
+    <sequenceFlow id="Flow_1oj9tit" name="False" sourceRef="Gateway_1kw87zm" targetRef="Activity_05ff3vx" />
     <task id="Activity_07hsmxp" name="Voorziene oppervlakte kleiner dan minimale oppervlakte?">
       <incoming>Flow_07wagz7</incoming>
       <outgoing>Flow_1g2cdz0</outgoing>
@@ -533,7 +533,7 @@
         <omgdi:waypoint x="2840" y="160" />
         <omgdi:waypoint x="2982" y="160" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="2841" y="210" width="28" height="14" />
+          <omgdc:Bounds x="2844" y="210" width="23" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="DataInputAssociation_1kl5jg4_di" bpmnElement="DataInputAssociation_1kl5jg4">
@@ -544,7 +544,7 @@
         <omgdi:waypoint x="2865" y="290" />
         <omgdi:waypoint x="2950" y="290" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="2896" y="272" width="23" height="14" />
+          <omgdc:Bounds x="2894" y="272" width="28" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_07wagz7_di" bpmnElement="Flow_07wagz7">

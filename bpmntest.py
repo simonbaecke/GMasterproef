@@ -1,10 +1,9 @@
 import html
 from bs4 import BeautifulSoup
-
 from dataimport import idvalue
 print(idvalue) #check waarden van csv
 
-bestand = open('diagramv7.bpmn','r').read()
+bestand = open('diagramv8.bpmn','r').read()
 bsdata=BeautifulSoup(bestand,'xml')
 data = bsdata.process
 graphics=bsdata.BPMNPlane
@@ -13,6 +12,7 @@ start = data.startEvent
 
 shapecolorid=[start['id']]
 linecolorid=[]
+wrongoutputlineid=[]
 
 next = start
 while next.name != "endEvent":
@@ -32,12 +32,23 @@ while next.name != "endEvent":
                 if next.name in ["exclusiveGateway"]:
                     idgateway=next['id']
                     formula = str(html.unescape(next['name']))
-                    for l in formula:
-                        if l in idvalue.keys():
-                            formula = formula.replace(l,str(idvalue[l]))
+                    l=1
+                    while l < len(formula)-1:
+                        if formula[l] in idvalue.keys() and formula[l-1] not in idvalue.keys()and formula[l+1] not in idvalue.keys():
+                            formula = formula[:l]+str(idvalue[formula[l]])+formula[l+1:]
+                        l+=1
+                    if formula[0] in idvalue.keys() and formula[1] not in idvalue.keys():
+                        formula = str(idvalue[formula[0]])+formula[1:]
+                    if formula[len(formula)-1] in idvalue.keys() and formula[len(formula)-2] not in idvalue.keys():
+                        formula = formula[:len(formula)-1]+str(idvalue[formula[len(formula)-1]])
                     answer = str(eval(formula))
-                    nextevent = data.find('sequenceFlow',attrs = {'sourceRef' : idgateway,'name':answer})
-                    idtarget=nextevent['targetRef']
+                    for flow in data.find_all('sequenceFlow',attrs = {'sourceRef' : idgateway}):
+                        if flow['name'] == answer:
+                            nextflow = flow
+                        else:
+                            wrongoutputlineid.append(flow['id'])
+                    # nextflow = data.find('sequenceFlow',attrs = {'sourceRef' : idgateway,'name':answer})
+                    idtarget=nextflow['targetRef']
                     next = data.find(attrs = {'id' : idtarget})
                     shapecolorid.append(next['id'])
                     # print(next.prettify()) #node na gateway
@@ -62,7 +73,7 @@ for content in data:
             linecolorid.append(content['id'])
     except:
         pass
-
+linecolorids = [x for x in linecolorid if x not in wrongoutputlineid]
 
 for shape in graphics:
     try:
@@ -72,7 +83,7 @@ for shape in graphics:
             shape["bioc:fill"]="#ffcdd2"
             shape["color:background-color"]="#ffcdd2"
             shape["color:border-color"]="#831311"
-        elif shape.name == "BPMNEdge"and id not in linecolorid and id[0:20] != "DataInputAssociation":
+        elif shape.name == "BPMNEdge"and id not in linecolorids and id[0:20] != "DataInputAssociation":
             shape['bioc:stroke']="#831311"
             shape["color:border-color"]="#831311"
     except:

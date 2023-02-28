@@ -8,7 +8,7 @@ f,?,onbekend,inhoud voorziene waterput
 g,tekst,"",motivatie nuttig hergebruik overschot water
 h,tekst,"",toepassingen gebruik water uit waterput
 i,gis,300,opp perceel
-j,gis,3,grondwinwatergebied
+j,gis,2,grondwinwatergebied
 k,bim,120,nieuwe verharde oppervlakte
 l,bim,0,bestaande verharde oppervlakte onaangesloten
 m,bim,300,nieuwe dakoppervlakte
