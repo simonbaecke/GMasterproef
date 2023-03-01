@@ -179,7 +179,7 @@
       <outgoing>Flow_0cf8axm</outgoing>
     </exclusiveGateway>
     <sequenceFlow id="Flow_15s0b0z" name="False" sourceRef="Gateway_1kw87zm" targetRef="Gateway_1w1rzhl" />
-    <endEvent id="Event_174vt7f" name="Buffervoorziening  uitgerust met een vertraagde afvoer met maximaal ledigingsdebiet van 20 liter per seconde en per aangesloten hectare.">
+    <endEvent id="Event_174vt7f" name="Buffervoorziening uitgerust met een vertraagde afvoer met maximaal ledigingsdebiet van 20 liter per seconde en per aangesloten hectare.">
       <incoming>Flow_0m1orgi</incoming>
     </endEvent>
     <sequenceFlow id="Flow_0m1orgi" name="True" sourceRef="Gateway_1w1rzhl" targetRef="Event_174vt7f" />
