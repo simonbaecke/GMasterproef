@@ -3,7 +3,7 @@ import json
 import urllib.parse
 
 # adress = input()
-adress = 'Valkstraat 29 assenede'
+adress = 'Singel 10 kaprijke'
 percentencodedadress = urllib.parse.quote(adress)
 url = "https://loc.geopunt.be/v4/Location?q=url".replace("url",percentencodedadress)
 response = requests.get(url)

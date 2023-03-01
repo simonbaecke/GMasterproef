@@ -4,8 +4,8 @@ import urllib.parse
 
 #x = float(input())
 #y = float(input())
-x=108588.48
-y=214985.36
+x=100688
+y=207134
 percentencodedxy = urllib.parse.quote(str(x)+','+str(y))
 url = "https://loc.geopunt.be/v4/Location?xy=url".replace("url",percentencodedxy)
 response = requests.get(url)

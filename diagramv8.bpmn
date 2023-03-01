@@ -19,7 +19,7 @@
     <endEvent id="Event_06hzrry" name="Geen afwatering of buffervoorziening nodig">
       <incoming>Flow_1ur848i</incoming>
     </endEvent>
-    <task id="Activity_0xphtt2" name="Drinkwinwatergebied?">
+    <task id="Activity_0xphtt2" name="Drinkwinwatergebied">
       <incoming>Flow_17ygq2h</incoming>
       <outgoing>Flow_0i9k1f4</outgoing>
       <property id="Property_17kp9be" name="__targetRef_placeholder" />
@@ -157,7 +157,7 @@
         <targetRef>Property_0ic9fio</targetRef>
       </dataInputAssociation>
     </task>
-    <sequenceFlow id="Flow_1oj9tit" name="False" sourceRef="Gateway_1kw87zm" targetRef="Activity_05ff3vx" />
+    <sequenceFlow id="Flow_1oj9tit" name="True" sourceRef="Gateway_1kw87zm" targetRef="Activity_05ff3vx" />
     <task id="Activity_07hsmxp" name="Voorziene oppervlakte kleiner dan minimale oppervlakte?">
       <incoming>Flow_07wagz7</incoming>
       <outgoing>Flow_1g2cdz0</outgoing>
@@ -178,12 +178,12 @@
       <outgoing>Flow_0m1orgi</outgoing>
       <outgoing>Flow_0cf8axm</outgoing>
     </exclusiveGateway>
-    <sequenceFlow id="Flow_15s0b0z" name="True" sourceRef="Gateway_1kw87zm" targetRef="Gateway_1w1rzhl" />
-    <endEvent id="Event_174vt7f" name="De buffervoorziening moet worden uitgerust met een vertraagde afvoer met een maximaal ledigingsdebiet van 20 liter per seconde en per aangesloten hectare.">
+    <sequenceFlow id="Flow_15s0b0z" name="False" sourceRef="Gateway_1kw87zm" targetRef="Gateway_1w1rzhl" />
+    <endEvent id="Event_174vt7f" name="Buffervoorziening  uitgerust met een vertraagde afvoer met maximaal ledigingsdebiet van 20 liter per seconde en per aangesloten hectare.">
       <incoming>Flow_0m1orgi</incoming>
     </endEvent>
     <sequenceFlow id="Flow_0m1orgi" name="True" sourceRef="Gateway_1w1rzhl" targetRef="Event_174vt7f" />
-    <endEvent id="Event_1p5wmau" name="Eidne">
+    <endEvent id="Event_1p5wmau" name="Einde">
       <incoming>Flow_0cf8axm</incoming>
     </endEvent>
     <sequenceFlow id="Flow_0cf8axm" name="False" sourceRef="Gateway_1w1rzhl" targetRef="Event_1p5wmau" />
@@ -269,13 +269,13 @@
         <omgdc:Bounds x="1370" y="250" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="DataObjectReference_0jr5jcp_di" bpmnElement="DataObjectReference_0jr5jcp" bioc:stroke="#0d4372" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#0d4372">
+      <bpmndi:BPMNShape id="DataObjectReference_0jr5jcp_di" bpmnElement="DataObjectReference_0jr5jcp">
         <omgdc:Bounds x="1212" y="415" width="36" height="50" />
         <bpmndi:BPMNLabel>
           <omgdc:Bounds x="1227" y="472" width="6" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_1sqfblr" bpmnElement="DataObjectReference_0qbw72g" bioc:stroke="#0d4372" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#0d4372">
+      <bpmndi:BPMNShape id="BPMNShape_1sqfblr" bpmnElement="DataObjectReference_0qbw72g">
         <omgdc:Bounds x="1402" y="415" width="36" height="50" />
         <bpmndi:BPMNLabel>
           <omgdc:Bounds x="1419" y="472" width="3" height="14" />
@@ -390,7 +390,7 @@
       <bpmndi:BPMNShape id="Event_174vt7f_di" bpmnElement="Event_174vt7f">
         <omgdc:Bounds x="3782" y="272" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="3755" y="315" width="90" height="146" />
+          <omgdc:Bounds x="3756" y="315" width="89" height="119" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1p5wmau_di" bpmnElement="Event_1p5wmau">
@@ -551,7 +551,7 @@
         <omgdi:waypoint x="2865" y="290" />
         <omgdi:waypoint x="2950" y="290" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="2894" y="272" width="28" height="14" />
+          <omgdc:Bounds x="2897" y="272" width="23" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_07wagz7_di" bpmnElement="Flow_07wagz7">
@@ -569,11 +569,11 @@
       <bpmndi:BPMNEdge id="Flow_15s0b0z_di" bpmnElement="Flow_15s0b0z">
         <omgdi:waypoint x="2840" y="265" />
         <omgdi:waypoint x="2840" y="80" />
-        <omgdi:waypoint x="3560" y="80" />
-        <omgdi:waypoint x="3560" y="280" />
-        <omgdi:waypoint x="3625" y="280" />
+        <omgdi:waypoint x="3600" y="80" />
+        <omgdi:waypoint x="3600" y="270" />
+        <omgdi:waypoint x="3635" y="270" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="3189" y="62" width="23" height="14" />
+          <omgdc:Bounds x="3207" y="62" width="28" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0m1orgi_di" bpmnElement="Flow_0m1orgi">
@@ -604,11 +604,11 @@
       <bpmndi:BPMNEdge id="Flow_02imqtb_di" bpmnElement="Flow_02imqtb">
         <omgdi:waypoint x="3340" y="265" />
         <omgdi:waypoint x="3340" y="210" />
-        <omgdi:waypoint x="3580" y="210" />
-        <omgdi:waypoint x="3580" y="270" />
-        <omgdi:waypoint x="3635" y="270" />
+        <omgdi:waypoint x="3570" y="210" />
+        <omgdi:waypoint x="3570" y="280" />
+        <omgdi:waypoint x="3625" y="280" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="3446" y="192" width="28" height="14" />
+          <omgdc:Bounds x="3441" y="192" width="28" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
