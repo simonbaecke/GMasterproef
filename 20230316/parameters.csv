@@ -1,0 +1,19 @@
+id,source,value,description
+a,bim,300,opp groendak
+b,bim,450,opp dak
+c,?,0,type gebouw
+d,bim,160,oppervlakte gebouw
+e,?,onbekend,inhoud voorziene waterput
+f,tekst,"",motivatie nuttig hergebruik overschot water
+g,tekst,"",toepassingen gebruik water uit waterput
+h,gis,300,opp perceel
+i,gis,3,grondwinwatergebied
+j,bim,120,nieuwe verharde oppervlakte
+k,bim,0,bestaande verharde oppervlakte onaangesloten
+l,bim,300,nieuwe dakoppervlakte
+m,bim,0,bestaande dakoppervlakte onaangesloten
+n,bim,500,voorziene volume voorziening
+o,tekst,"",motivatie grotere inhoud van vereist
+p,tekst,"",motivatie kleiner volume buffer/infiltratievolume dan vereist
+q,tekst,300,voorziene infiltratieoppervlakte
+r,tekst,"",motivatie kleinere oppervlakte infiltratie dan vereist

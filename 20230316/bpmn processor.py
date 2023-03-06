@@ -1,8 +1,14 @@
-bpmn = "diagramv3.bpmn"
+bpmn = "gebouwv1.bpmn"
 import html
+import math
 from bs4 import BeautifulSoup
 from getCSV import idvalue
 print(idvalue) #check waarden van csv
+
+
+def round_up(n, decimals=0):
+    multiplier = 10 ** decimals
+    return math.ceil(n * multiplier) / multiplier
 
 def convertformula(database,source):
     formula = str(html.unescape(source))
@@ -41,13 +47,15 @@ while next.name != "endEvent":
                 #bekijken of het een gateway is, anders gewoon doorgaan
                 while next.name in ["exclusiveGateway","intermediateThrowEvent"]:
                     nota = data.find('association',attrs = {'sourceRef' : next['id']})
-                    noto=data.find('textAnnotation',attrs = {'id' : nota['targetRef']})
+                    noto = data.find('textAnnotation',attrs = {'id' : nota['targetRef']})
                     shapecolorid.append(noto['id'])
                     print(noto.text)
                     idgateway=next['id']
                     formula = convertformula(idvalue,noto.text)
+                    print(formula)
                     if next.name == "exclusiveGateway":
                         answer = str(eval(formula))
+                        print(answer)
                         for flow in data.find_all('sequenceFlow',attrs = {'sourceRef' : idgateway}):
                             if flow['name'] == answer:
                                 nextflow = flow
@@ -59,6 +67,7 @@ while next.name != "endEvent":
                     else:
                         exec(formula)
                         idvalue[formula[0]]=eval(formula[0])
+                        print('a')
                         break
                         
                 
