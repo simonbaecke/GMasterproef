@@ -1,19 +1,21 @@
 id,source,value,description
-a,bim,300,opp groendak
-b,bim,450,opp dak
-c,?,0,type gebouw
-d,bim,160,oppervlakte gebouw
-e,?,onbekend,inhoud voorziene waterput
+a,bim,250,horizontale groendakoppervlakte
+b,bim,450,totale horizontale dakoppervlakte
+c,?,1,type gebouw
+d,bim,400,oppervlakte gebouw
+e,?,9000,inhoud voorziene waterput
 f,tekst,"",motivatie nuttig hergebruik overschot water
 g,tekst,"",toepassingen gebruik water uit waterput
-h,gis,300,opp perceel
-i,gis,3,grondwinwatergebied
-j,bim,120,nieuwe verharde oppervlakte
-k,bim,0,bestaande verharde oppervlakte onaangesloten
-l,bim,300,nieuwe dakoppervlakte
-m,bim,0,bestaande dakoppervlakte onaangesloten
-n,bim,500,voorziene volume voorziening
-o,tekst,"",motivatie grotere inhoud van vereist
+h,gis,Singel 10 kaprijke,adres
+i,gis,200,nieuwe verharde oppervlakte
+j,bim,120,bestaande onaangesloten verharde oppervlakte
+k,bim,450,nieuwe horizontale dakoppervlakte
+l,bim,0,bestaande onaangesloten horizontale dakoppervlakte
+m,bim,"",motivatie hemelwaterwaterput groter dan vereist
+n,bim,50,Afwateringsoppervlakte in mindering gebracht
+o,tekst,10000,voorziene volume voorziening
 p,tekst,"",motivatie kleiner volume buffer/infiltratievolume dan vereist
 q,tekst,300,voorziene infiltratieoppervlakte
 r,tekst,"",motivatie kleinere oppervlakte infiltratie dan vereist
+D,proces,400,grootte perceel
+E,prodes,3,drinkwinwatergebied
