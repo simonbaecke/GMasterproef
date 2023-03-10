@@ -1,0 +1,33 @@
+{
+    "LocationResult": [
+        {
+            "Municipality": "Kaprijke",
+            "Zipcode": "9971",
+            "Thoroughfarename": "Singel",
+            "Housenumber": "10",
+            "ID": 1096752,
+            "FormattedAddress": "Singel 10, 9971 Kaprijke",
+            "Location": {
+                "Lat_WGS84": 51.172059570068804,
+                "Lon_WGS84": 3.6636545094120097,
+                "X_Lambert72": 100687.02,
+                "Y_Lambert72": 207128.31
+            },
+            "LocationType": "crab_huisnummer_manueleAanduidingVanGebouw",
+            "BoundingBox": {
+                "LowerLeft": {
+                    "Lat_WGS84": 51.172059570068804,
+                    "Lon_WGS84": 3.6636545094120097,
+                    "X_Lambert72": 100687.02,
+                    "Y_Lambert72": 207128.31
+                },
+                "UpperRight": {
+                    "Lat_WGS84": 51.172059570068804,
+                    "Lon_WGS84": 3.6636545094120097,
+                    "X_Lambert72": 100687.02,
+                    "Y_Lambert72": 207128.31
+                }
+            }
+        }
+    ]
+}

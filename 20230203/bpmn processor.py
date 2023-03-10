@@ -46,16 +46,6 @@ while next.name != "endEvent":
                 #bekijken of het een gateway is, anders gewoon doorgaan
                 while next.name == "exclusiveGateway":
                     idgateway=next['id']
-                    # formula = str(html.unescape(next['name']))
-                    # i=1
-                    # while i < len(formula)-1:
-                    #     if formula[i] in idvalue.keys() and formula[i-1] not in idvalue.keys()and formula[i+1] not in idvalue.keys():
-                    #         formula = formula[:i]+str(idvalue[formula[i]])+formula[i+1:]
-                    #     i+=1
-                    # if formula[0] in idvalue.keys() and formula[1] not in idvalue.keys():
-                    #     formula = str(idvalue[formula[0]])+formula[1:]
-                    # if formula[len(formula)-1] in idvalue.keys() and formula[len(formula)-2] not in idvalue.keys():
-                    #     formula = formula[:len(formula)-1]+str(idvalue[formula[len(formula)-1]])
                     formula = convertformula(idvalue,next['name'])
                     answer = str(eval(formula))
                     for flow in data.find_all('sequenceFlow',attrs = {'sourceRef' : idgateway}):
@@ -70,10 +60,6 @@ while next.name != "endEvent":
                 #nieuwe parameters maken en toevoegen aan idvalue
                 if next.name == "intermediateThrowEvent":
                     formula = convertformula(idvalue,next['name'])
-                    # formula = str(html.unescape(next['name']))
-                    # for l in formula:
-                    #     if l in idvalue.keys():
-                    #         formula = formula.replace(l,str(idvalue[l]))
                     exec(formula)
                     idvalue[formula[0]]=eval(formula[0])
 
