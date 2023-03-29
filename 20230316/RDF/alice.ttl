@@ -1,0 +1,22 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ex: <http://example.com/> .
+
+ex:book1 dc:title "The Great Gatsby" ;
+         dc:creator "F. Scott Fitzgerald" ;
+         dc:date "1925" .
+
+ex:book2 dc:title "To Kill a Mockingbird" ;
+         dc:creator "Harper Lee" ;
+         dc:date "1960" .
+
+ex:book3 dc:title "Pride and Prejudice" ;
+         dc:creator "Jane Austen" ;
+         dc:date "1813" .
+
+ex:book4 dc:title "The Catcher in the Rye" ;
+         dc:creator "J.D. Salinger" ;
+         dc:date "1951" .
+
+ex:book5 dc:title "Animal Farm" ;
+         dc:creator "George Orwell" ;
+         dc:date "1945"

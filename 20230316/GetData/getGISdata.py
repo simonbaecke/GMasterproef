@@ -1,12 +1,9 @@
 import requests
 import urllib.parse
 import json
-import getcoordinates
 
 # x = float(input())
 # y = float(input())
-# x = getcoordinates.x
-# y = getcoordinates.y
 x=100688
 y=207134
 
@@ -17,6 +14,7 @@ urlwater = "https://www.dov.vlaanderen.be/geoserver/wfs?service=WFS&version=2.0.
 bestandsnaamwater = 'winwatergebied'
 
 def getWFS(url,bestandsnaam):
+    #omzeilen bescherming tegen script
     user_agent = 'Mozilla/5.0'
     response = requests.get(url, headers={'User-Agent': user_agent})
 
