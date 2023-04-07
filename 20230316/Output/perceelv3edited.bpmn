@@ -455,7 +455,7 @@
 <omgdc:Bounds height="27" width="170" x="2540" y="362"/>
 <bpmndi:BPMNLabel/>
 </bpmndi:BPMNShape>
-<bpmndi:BPMNShape bpmnElement="TextAnnotation_11ebe5a" id="TextAnnotation_11ebe5a_di">
+<bpmndi:BPMNShape bioc:stroke="#B7B7B7" bpmnElement="TextAnnotation_11ebe5a" color:border-color="#B7B7B7" id="TextAnnotation_11ebe5a_di">
 <omgdc:Bounds height="30" width="100" x="3870" y="645"/>
 <bpmndi:BPMNLabel/>
 </bpmndi:BPMNShape>
@@ -655,7 +655,7 @@
 <omgdc:Bounds height="80" width="100" x="2710" y="470"/>
 <bpmndi:BPMNLabel/>
 </bpmndi:BPMNShape>
-<bpmndi:BPMNShape bpmnElement="Gateway_014zltj" id="Gateway_014zltj_di" isMarkerVisible="true">
+<bpmndi:BPMNShape bioc:stroke="#B7B7B7" bpmnElement="Gateway_014zltj" color:border-color="#B7B7B7" id="Gateway_014zltj_di" isMarkerVisible="true">
 <omgdc:Bounds height="50" width="50" x="3895" y="485"/>
 <bpmndi:BPMNLabel>
 <omgdc:Bounds height="53" width="85" x="3893" y="538"/>
@@ -693,7 +693,7 @@
 <omgdc:Bounds height="27" width="75" x="3143" y="542"/>
 </bpmndi:BPMNLabel>
 </bpmndi:BPMNShape>
-<bpmndi:BPMNShape bpmnElement="Activity_0ydjltq" id="Activity_0ydjltq_di">
+<bpmndi:BPMNShape bioc:stroke="#B7B7B7" bpmnElement="Activity_0ydjltq" color:border-color="#B7B7B7" id="Activity_0ydjltq_di">
 <omgdc:Bounds height="80" width="100" x="3680" y="470"/>
 <bpmndi:BPMNLabel/>
 </bpmndi:BPMNShape>
@@ -877,7 +877,7 @@
 <omgdi:waypoint x="2590" y="492"/>
 <omgdi:waypoint x="2590" y="389"/>
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge bpmnElement="Association_1esj7da" id="Association_1esj7da_di">
+<bpmndi:BPMNEdge bioc:stroke="#B7B7B7" bpmnElement="Association_1esj7da" color:border-color="#B7B7B7" id="Association_1esj7da_di">
 <omgdi:waypoint x="3920" y="535"/>
 <omgdi:waypoint x="3920" y="645"/>
 </bpmndi:BPMNEdge>
@@ -1069,7 +1069,7 @@
 <omgdi:waypoint x="3730" y="635"/>
 <omgdi:waypoint x="3730" y="550"/>
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge bpmnElement="Flow_1ytcyrn" id="Flow_1ytcyrn_di">
+<bpmndi:BPMNEdge bioc:stroke="#B7B7B7" bpmnElement="Flow_1ytcyrn" color:border-color="#B7B7B7" id="Flow_1ytcyrn_di">
 <omgdi:waypoint x="3780" y="510"/>
 <omgdi:waypoint x="3895" y="510"/>
 </bpmndi:BPMNEdge>
@@ -1088,7 +1088,7 @@
 <omgdi:waypoint x="3430" y="510"/>
 <omgdi:waypoint x="3525" y="510"/>
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge bioc:stroke="#B7B7B7" bpmnElement="Flow_1e0bukw" color:border-color="#B7B7B7" id="Flow_1e0bukw_di">
+<bpmndi:BPMNEdge bpmnElement="Flow_1e0bukw" id="Flow_1e0bukw_di">
 <omgdi:waypoint x="3550" y="485"/>
 <omgdi:waypoint x="3550" y="340"/>
 <omgdi:waypoint x="3902" y="340"/>
@@ -1096,7 +1096,7 @@
 <omgdc:Bounds height="14" width="28" x="3551" y="410"/>
 </bpmndi:BPMNLabel>
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge bpmnElement="Flow_0vny59t" id="Flow_0vny59t_di">
+<bpmndi:BPMNEdge bioc:stroke="#B7B7B7" bpmnElement="Flow_0vny59t" color:border-color="#B7B7B7" id="Flow_0vny59t_di">
 <omgdi:waypoint x="3575" y="510"/>
 <omgdi:waypoint x="3680" y="510"/>
 <bpmndi:BPMNLabel>
@@ -1114,7 +1114,7 @@
 <omgdc:Bounds height="14" width="28" x="4004" y="492"/>
 </bpmndi:BPMNLabel>
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge bpmnElement="Flow_073sahx" id="Flow_073sahx_di">
+<bpmndi:BPMNEdge bioc:stroke="#B7B7B7" bpmnElement="Flow_073sahx" color:border-color="#B7B7B7" id="Flow_073sahx_di">
 <omgdi:waypoint x="3920" y="485"/>
 <omgdi:waypoint x="3920" y="358"/>
 <bpmndi:BPMNLabel>

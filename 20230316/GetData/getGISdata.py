@@ -4,8 +4,8 @@ import json
 
 # x = float(input())
 # y = float(input())
-x=100688
-y=207134
+x=98106.28
+y=171962.47
 
 percentencodedxy = urllib.parse.quote(str(x)+' '+str(y))
 urlperceel = "https://geo.api.vlaanderen.be/GRB/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=GRB:ADP&outputFormat=application/json&CQL_FILTER=CONTAINS(SHAPE,POINT(url))".replace('url',percentencodedxy)

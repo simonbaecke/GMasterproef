@@ -1,31 +1,31 @@
 {
     "LocationResult": [
         {
-            "Municipality": "Kaprijke",
-            "Zipcode": "9971",
-            "Thoroughfarename": "Singel",
-            "Housenumber": "10",
-            "ID": 1096752,
-            "FormattedAddress": "Singel 10, 9971 Kaprijke",
+            "Municipality": "Oudenaarde",
+            "Zipcode": "9700",
+            "Thoroughfarename": "Beaucarnestraat",
+            "Housenumber": "11",
+            "ID": 1390800,
+            "FormattedAddress": "Beaucarnestraat 11, 9700 Oudenaarde",
             "Location": {
-                "Lat_WGS84": 51.172059570068804,
-                "Lon_WGS84": 3.6636545094120097,
-                "X_Lambert72": 100687.02,
-                "Y_Lambert72": 207128.31
+                "Lat_WGS84": 50.85603210538038,
+                "Lon_WGS84": 3.631865611854953,
+                "X_Lambert72": 98115.29,
+                "Y_Lambert72": 171994.65
             },
             "LocationType": "crab_huisnummer_manueleAanduidingVanGebouw",
             "BoundingBox": {
                 "LowerLeft": {
-                    "Lat_WGS84": 51.172059570068804,
-                    "Lon_WGS84": 3.6636545094120097,
-                    "X_Lambert72": 100687.02,
-                    "Y_Lambert72": 207128.31
+                    "Lat_WGS84": 50.85603210538038,
+                    "Lon_WGS84": 3.631865611854953,
+                    "X_Lambert72": 98115.29,
+                    "Y_Lambert72": 171994.65
                 },
                 "UpperRight": {
-                    "Lat_WGS84": 51.172059570068804,
-                    "Lon_WGS84": 3.6636545094120097,
-                    "X_Lambert72": 100687.02,
-                    "Y_Lambert72": 207128.31
+                    "Lat_WGS84": 50.85603210538038,
+                    "Lon_WGS84": 3.631865611854953,
+                    "X_Lambert72": 98115.29,
+                    "Y_Lambert72": 171994.65
                 }
             }
         }

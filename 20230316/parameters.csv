@@ -3,7 +3,7 @@ a,bim,250,horizontale groendakoppervlakte
 b,bim,450,totale horizontale dakoppervlakte
 c,?,1,type gebouw
 d,bim,400,oppervlakte gebouw
-e,?,9000,inhoud voorziene waterput
+e,?,5000,inhoud voorziene waterput
 f,tekst,"",motivatie nuttig hergebruik overschot water
 g,tekst,"",toepassingen gebruik water uit waterput
 h,gis,Singel 10 kaprijke,adres

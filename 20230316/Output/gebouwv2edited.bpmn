@@ -307,7 +307,7 @@
 <omgdc:Bounds height="14" width="8" x="1716" y="672"/>
 </bpmndi:BPMNLabel>
 </bpmndi:BPMNShape>
-<bpmndi:BPMNShape bpmnElement="Gateway_0roenbx" id="Gateway_0roenbx_di" isMarkerVisible="true">
+<bpmndi:BPMNShape bioc:stroke="#B7B7B7" bpmnElement="Gateway_0roenbx" color:border-color="#B7B7B7" id="Gateway_0roenbx_di" isMarkerVisible="true">
 <omgdc:Bounds height="50" width="50" x="2305" y="455"/>
 <bpmndi:BPMNLabel>
 <omgdc:Bounds height="40" width="85" x="2288" y="512"/>
@@ -375,7 +375,7 @@
 <omgdc:Bounds height="29.991774608864603" width="99.99274099883856" x="880" y="370"/>
 <bpmndi:BPMNLabel/>
 </bpmndi:BPMNShape>
-<bpmndi:BPMNShape bpmnElement="TextAnnotation_0hsbtig" id="TextAnnotation_0hsbtig_di">
+<bpmndi:BPMNShape bioc:stroke="#B7B7B7" bpmnElement="TextAnnotation_0hsbtig" color:border-color="#B7B7B7" id="TextAnnotation_0hsbtig_di">
 <omgdc:Bounds height="29.991774608864603" width="99.99274099883856" x="2240" y="370"/>
 <bpmndi:BPMNLabel/>
 </bpmndi:BPMNShape>
@@ -490,7 +490,7 @@
 <omgdi:waypoint x="1980" y="480"/>
 <omgdi:waypoint x="2125" y="480"/>
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge bpmnElement="Flow_0jtunva" id="Flow_0jtunva_di">
+<bpmndi:BPMNEdge bioc:stroke="#B7B7B7" bpmnElement="Flow_0jtunva" color:border-color="#B7B7B7" id="Flow_0jtunva_di">
 <omgdi:waypoint x="2175" y="480"/>
 <omgdi:waypoint x="2305" y="480"/>
 <bpmndi:BPMNLabel>
@@ -520,7 +520,7 @@
 <omgdi:waypoint x="2728" y="480"/>
 <omgdi:waypoint x="2860" y="480"/>
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge bpmnElement="Flow_1h9g5h5" id="Flow_1h9g5h5_di">
+<bpmndi:BPMNEdge bioc:stroke="#B7B7B7" bpmnElement="Flow_1h9g5h5" color:border-color="#B7B7B7" id="Flow_1h9g5h5_di">
 <omgdi:waypoint x="2330" y="455"/>
 <omgdi:waypoint x="2330" y="340"/>
 <omgdi:waypoint x="2800" y="340"/>
@@ -529,7 +529,7 @@
 <omgdc:Bounds height="14" width="23" x="2554" y="322"/>
 </bpmndi:BPMNLabel>
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge bioc:stroke="#B7B7B7" bpmnElement="Flow_1dj2ve5" color:border-color="#B7B7B7" id="Flow_1dj2ve5_di">
+<bpmndi:BPMNEdge bpmnElement="Flow_1dj2ve5" id="Flow_1dj2ve5_di">
 <omgdi:waypoint x="2150" y="455"/>
 <omgdi:waypoint x="2150" y="310"/>
 <omgdi:waypoint x="2910" y="310"/>
@@ -573,7 +573,7 @@
 <omgdi:waypoint x="954" y="461"/>
 <omgdi:waypoint x="935" y="400"/>
 </bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge bpmnElement="Association_1l90vtl" id="Association_1l90vtl_di">
+<bpmndi:BPMNEdge bioc:stroke="#B7B7B7" bpmnElement="Association_1l90vtl" color:border-color="#B7B7B7" id="Association_1l90vtl_di">
 <omgdi:waypoint x="2323" y="462"/>
 <omgdi:waypoint x="2296" y="400"/>
 </bpmndi:BPMNEdge>

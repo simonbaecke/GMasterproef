@@ -8,3 +8,4 @@ coords = data["features"][0]['geometry']['coordinates'][0]
 
 perceel = Polygon(coords)
 area = perceel.area
+print(area)
