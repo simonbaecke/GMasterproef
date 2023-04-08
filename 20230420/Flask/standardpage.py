@@ -1,6 +1,5 @@
 from flask import Flask, render_template, url_for, flash, redirect
 from forms import RegistrationForm, LoginForm
-from flask import request
 
 app = Flask(__name__)
 
@@ -50,10 +49,6 @@ def login():
          flash('Login Unsuccesfull. Please check username and password', 'danger')
    return render_template('login.html', title='Login', form=form)
 
-@app.route('/test')
-def test():
-   user_agent = request.headers.get('User-Agent')
-   return user_agent
 
 
 
