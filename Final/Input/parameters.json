@@ -1,0 +1,219 @@
+[
+  {
+    "id": "B1",
+    "value": null,
+    "validation": ">=0",
+    "unit of measurement": "square meter",
+    "data type": "BIM",
+    "name": "Green roof surface area",
+    "description": "Horizontally projected surface area of green roof(s)"
+  },
+  {
+    "id": "B2",
+    "value": null,
+    "validation": ">=0",
+    "unit of measurement": "square meter",
+    "data type": "BIM",
+    "name": "Roof surface area",
+    "description": "Horizontally projected surface area of roof(s)"
+  },
+  {
+    "id": "A3",
+    "value": null,
+    "data type": "Applicant",
+    "name": "Building Type",
+    "description": "Building Type"
+  },
+  {
+    "id": "R4",
+    "value": null,
+    "unit of measurement": "liter",
+    "data type": "Rainwater Regulation",
+    "name": "Minimum capacity rainwater tank",
+    "description": "Minimum capacity of rainwater tank"
+  },
+  {
+    "id": "A5",
+    "value": null,
+    "validation": ">=0",
+    "unit of measurement": "liter",
+    "data type": "Applicant",
+    "name": "Planned capacity rainwater tank",
+    "description": "Planned capacity of rainwater tank"
+  },
+  {
+    "id": "A6M",
+    "value": null,
+    "data type": "Applicant",
+    "name": "Motivation higher reuse rainwater",
+    "description": "Motivation for higher reuse of rainwater for other building types than a single family home"
+  },
+  {
+    "id": "R7",
+    "value": null,
+    "data type": "Rainwater Regulation",
+    "name": "Difference planned rainwater tank capacity and minimum capacity",
+    "description": "Difference planned rainwater tank capacity and minimum capacity required by the rainwater regulation"
+  },
+  {
+    "id": "A8M",
+    "value": null,
+    "data type": "Applicant",
+    "name": "Applications reuse of rainwater",
+    "description": "Applications for the reuse of rainwater"
+  },
+  {
+    "id": "B9",
+    "value": null,
+    "data type": "BIM",
+    "name": "Address",
+    "description": "Address of building site"
+  },
+  {
+    "id": "G10",
+    "value": null,
+    "unit of measurement": "Lambert72",
+    "data type": "GIS",
+    "name": "Coordinates",
+    "description": "x & y coordinates of center of building site in Lambert72/EPSG:3137null"
+  },
+  {
+    "id": "G11",
+    "value": null,
+    "validation": ">=0",
+    "unit of measurement": "square meter",
+    "data type": "GIS",
+    "name": "Area of building site",
+    "description": "Area of building site specified in Basiskaart Vlaanderen (GRB)"
+  },
+  {
+    "id": "G12",
+    "value": null,
+    "data type": "GIS",
+    "name": "Protection zone of a drinking water extraction area",
+    "description": "Protection zone of a drinking water extraction area in which the building site is located"
+  },
+  {
+    "id": "R13",
+    "value": null,
+    "data type": "Rainwater Regulation",
+    "name": "Type of rainwater regulation system",
+    "description": "Type of rainwater regulation system; buffering or infiltration"
+  },
+  {
+    "id": "B14",
+    "value": null,
+    "validation": ">=0",
+    "unit of measurement": "square meter",
+    "data type": "BIM",
+    "name": "Newly (re)constructed paved surface area",
+    "description": "Newly (re)constructed paved surface area, including extensions of existing surfaces"
+  },
+  {
+    "id": "B15",
+    "value": null,
+    "validation": ">=0",
+    "unit of measurement": "square meter",
+    "data type": "BIM",
+    "name": "Existing unconnected paved surface area",
+    "description": "Existing paved surface area that is not connected to a rainwater tank, a buffering facility or infiltration system"
+  },
+  {
+    "id": "B16",
+    "value": null,
+    "validation": ">=0",
+    "unit of measurement": "square meter",
+    "data type": "BIM",
+    "name": "Newly constructed roof surface area",
+    "description": "Horizontally projected surface area of newly constructed roof(s) with the area of green roofs divided by two, including extensions of existing roofs"
+  },
+  {
+    "id": "B17",
+    "value": null,
+    "validation": ">=0",
+    "unit of measurement": "square meter",
+    "data type": "BIM",
+    "name": "Existing roof surface area",
+    "description": "Horizontally projected surface area of existing roof(s) with the area of green roofs divided by two"
+  },
+  {
+    "id": "R18",
+    "value": null,
+    "unit of measurement": "square meter",
+    "data type": "Rainwater Regulation",
+    "name": "Sum drainage surface areas",
+    "description": "Sum of the drainage surface areas"
+  },
+  {
+    "id": "A19M",
+    "value": null,
+    "data type": "Applicant",
+    "name": "Motivation bigger rainwater tank",
+    "description": "Motivation for higher capacity of rainwater tank then required for other building types than a single family home"
+  },
+  {
+    "id": "A20",
+    "value": null,
+    "validation": ">=0",
+    "unit of measurement": "liter per day",
+    "data type": "Applicant",
+    "name": "Estimated reuse rainwater per day",
+    "description": "Estimated reuse of rainwater per day"
+  },
+  {
+    "id": "R21",
+    "value": null,
+    "unit of measurement": "square meter",
+    "data type": "Rainwater Regulation",
+    "name": "Corrected sum drainage surface areas",
+    "description": "Corrected sum of the drainage surface areas, corrected with the capacity of the rainwater tank taken into account"
+  },
+  {
+    "id": "R22",
+    "value": null,
+    "unit of measurement": "liter",
+    "data type": "Rainwater Regulation",
+    "name": "Minimum capacity rainwater regulation system",
+    "description": "Minimum capacity of rainwater regulation system"
+  },
+  {
+    "id": "A23",
+    "value": null,
+    "validation": ">=0",
+    "unit of measurement": "liter",
+    "data type": "Applicant",
+    "name": "Planned capacity rainwater regulation system",
+    "description": "Planned capacity of rainwater regulation system"
+  },
+  {
+    "id": "A24M",
+    "value": null,
+    "data type": "Applicant",
+    "name": "Motivation lower capacity rainwater regulation system",
+    "description": "Motivation for lower capacity of the rainwater regulation system then required"
+  },
+  {
+    "id": "R25",
+    "value": null,
+    "unit of measurement": "square meter",
+    "data type": "Rainwater Regulation",
+    "name": "Minimum area infiltration system",
+    "description": "Minimum area of infiltration system"
+  },
+  {
+    "id": "A26",
+    "value": null,
+    "validation": ">=0",
+    "unit of measurement": "square meter",
+    "data type": "Applicant",
+    "name": "Planned area infiltration system",
+    "description": "Planned area of infiltration system"
+  },
+  {
+    "id": "A27M",
+    "value": null,
+    "data type": "Applicant",
+    "name": "Motivation lower area infiltration system",
+    "description": "Motivation for lower area of the inifltration system then required"
+  }
+]

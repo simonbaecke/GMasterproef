@@ -4,8 +4,8 @@ import json
 
 # x = float(input())
 # y = float(input())
-x=98106.28
-y=171962.47
+x=100152
+y=206666
 
 percentencodedxy = urllib.parse.quote(str(x)+' '+str(y))
 urlperceel = "https://geo.api.vlaanderen.be/GRB/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=GRB:ADP&outputFormat=application/json&CQL_FILTER=CONTAINS(SHAPE,POINT(url))".replace('url',percentencodedxy)
@@ -21,7 +21,7 @@ def getWFS(url,bestandsnaam):
     if response.status_code == 200:
         data = response.json()
         json_string = json.dumps(data, ensure_ascii=False, indent=4)
-        with open("Output/"+bestandsnaam+".json", "w") as write_file:
+        with open("C:/Users/simon_w3/OneDrive - UGent/School/Ugent/2de ma ing.-arch\Masterproef/GMasterproef/20230316/Output/"+bestandsnaam+".json", "w") as write_file:
             write_file.write(json_string)
         return data
     else:

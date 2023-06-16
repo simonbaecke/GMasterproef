@@ -4,7 +4,7 @@ import urllib.parse
 
 
 # adress = input()
-adress = 'Beaucarnestraat 11 oudenaarde'
+adress = '25 kaprijke'
 def getcoordinates(adress):
     percentencodedadress = urllib.parse.quote(adress)
     url = "https://loc.geopunt.be/v4/Location?q=url".replace("url",percentencodedadress)

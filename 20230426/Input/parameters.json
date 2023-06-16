@@ -1,0 +1,49 @@
+{
+  "parameters": [
+    {
+      "id": "a",
+      "value": 150,
+      "description": "Horizontale dakoppervlakte van het groendak"
+    },
+    {
+      "id": "b",
+      "value": 250,
+      "description": "Totale dakoppervlakte"
+    },
+    {
+        "id": "c",
+        "value": "ééngezinswoning",
+        "description": "Gebouwtype"
+    },
+    {
+        "id": "d",
+        "value": 3000,
+        "description": "Voorziene inhoud hemelwaterput"
+      },
+      {
+        "id": "e",
+        "value": 250,
+        "description": "Adres"
+      },
+      {
+          "id": "f",
+          "value": 1000,
+          "description": "Nieuwe verharde oppervlakte"
+      },
+      {
+        "id": "g",
+        "value": 250,
+        "description": "Bestaande onaangesloten verharde oppervlakte"
+      },
+      {
+          "id": "h",
+          "value": "Nieuwe horizontale dakoppervlakte (groendak telt maar voor de helft)",
+          "description": "Gebouwtype"
+      },
+      {
+          "id": "i",
+          "value": 3000,
+          "description": "Bestaande onaangesloten horizontale dakoppervlakte (groendak telt maar voor de helft)"
+        }
+  ]
+}
