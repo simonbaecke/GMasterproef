@@ -94,14 +94,14 @@
         "description": "Protection zone of a drinking water extraction area in which the building site is located",
         "id": "G12",
         "name": "Protection zone of a drinking water extraction area",
-        "value": 4
+        "value": null
     },
     {
         "data type": "Rainwater Regulation",
         "description": "Type of rainwater regulation system; buffering or infiltration",
         "id": "R13",
         "name": "Type of rainwater regulation system",
-        "value": "Infiltration system"
+        "value": null
     },
     {
         "data type": "BIM",
@@ -145,7 +145,7 @@
         "id": "R18",
         "name": "Sum drainage surface areas",
         "unit of measurement": "square meter",
-        "value": 550
+        "value": null
     },
     {
         "data type": "Applicant",
@@ -169,7 +169,7 @@
         "id": "R21",
         "name": "Corrected sum drainage surface areas",
         "unit of measurement": "square meter",
-        "value": 15.29
+        "value": null
     },
     {
         "data type": "Rainwater Regulation",
@@ -177,7 +177,7 @@
         "id": "R22",
         "name": "Minimum capacity rainwater regulation system",
         "unit of measurement": "liter",
-        "value": 382.25
+        "value": null
     },
     {
         "data type": "Applicant",
@@ -201,7 +201,7 @@
         "id": "R25",
         "name": "Minimum area infiltration system",
         "unit of measurement": "square meter",
-        "value": 0.6115999999999999
+        "value": null
     },
     {
         "data type": "Applicant",

@@ -15,11 +15,17 @@ def round_up(n, decimals=0):
 with open(r"C:\Users\simon_w3\OneDrive - UGent\School\Ugent\2de ma ing.-arch\Masterproef\GMasterproef\Final\tests\parameters2.json", 'r') as database:
     database = json.load(database)
 
-bpmn = open(r"C:\Users\simon_w3\OneDrive - UGent\School\Ugent\2de ma ing.-arch\Masterproef\GMasterproef\Final\tests\BPMN\test parcelscale2.bpmn",'r').read()
+bpmn = open(r"C:\Users\simon_w3\OneDrive - UGent\School\Ugent\2de ma ing.-arch\Masterproef\GMasterproef\Final\tests\BPMN\test pools.bpmn",'r').read()
 bsdata=BeautifulSoup(bpmn,'xml')
 data = bsdata.process
 graphics=bsdata.BPMNPlane
 start = data.startEvent
+
+x= 0
+for a in data:
+    x += 1
+
+print(x)
 
 local_dict = {}
 global_dict=globals()
@@ -70,22 +76,26 @@ while next.name != "endEvent" and errorloop:
 
                     elif ms: #kleuren van associations nog doen
                         print(local_dict)
-                        parameterms = data.find(attrs= {'id' : ms.dataInputAssociation.sourceRef.string})["name"]
-                        print(parameterms)
-                        parameterms = eval(parameterms,global_dict,local_dict)
-                        print(parameterms)
+                        parameterms = data.find(attrs= {'id' : ms.dataInputAssociation.sourceRef.string})
+                        parameteridms = parameterms["name"]
+                        parametermsvalues = eval(parameteridms,global_dict,local_dict)
                         try:             
-                            response = requests.post(msurl,data=json.dumps(parameterms))
+                            response = requests.post(msurl,data=json.dumps(parametermsvalues))
                             if response.status_code == 200:
                                 msvalue = response.json()
                                 local_dict[dataobjectid] = msvalue
                                 database[int(dataobjectid[1:])-1]['value']= local_dict[dataobjectid]
                         
                         except:
-                            print('da werkt nie he')
+                            print('cannot connect to microservice: ' + msurl)
                             errorloop = False
                         
+                        #colors
                         shapecolorid.append(ms["id"])
+                        shapecolorid.append(parameterms["id"])
+                        linecolorid.append(ms.dataInputAssociation['id'])
+                        linecolorid.append(ms.dataOutputAssociation['id'])
+                        
                         ms = None
                         print(local_dict)                        
 
@@ -95,7 +105,7 @@ while next.name != "endEvent" and errorloop:
                         if databasevalue is not None:
                             local_dict[dataobjectid] = databasevalue
                         else:
-                            print('nee moat da klopt hier nie he '+ dataobjectid)
+                            print(dataobjectid + ' is not valid or absent from the database')
                             errorloop = False
                     
 
@@ -136,7 +146,7 @@ while next.name != "endEvent" and errorloop:
             pass
 
 #kleuren van tasks die niet uitgevoerd worden
-for content in data:
+for content in data.findAll('sequenceFlow'):
     try:
         if content['sourceRef'] in shapecolorid and content['targetRef'] in shapecolorid:
                 linecolorid.append(content['id'])
@@ -145,7 +155,15 @@ for content in data:
     
     linecolorid = [x for x in linecolorid if x not in wrongoutputlineid]
 
-for shape in graphics: #nog iets maken van textvakken als dat bij een shape hoort
+for association in data.findAll("association"):
+    if association['targetRef'].find('TextAnnotation') != -1 and association['sourceRef'] in shapecolorid:
+        linecolorid.append(association['id'])
+        shapecolorid.append(association['targetRef'])
+
+if next.name == "endEvent":
+    shapecolorid.append(bsdata.find("participant", attrs = {'processRef' : data['id']})["id"])
+
+for shape in graphics:
     try:
         id = shape['bpmnElement']
         if shape.name == "BPMNShape" and id not in shapecolorid:
@@ -160,6 +178,7 @@ for shape in graphics: #nog iets maken van textvakken als dat bij een shape hoor
 print(next)
 print(local_dict)
 print(endparameters)
+print(shapecolorid)
 
 #exporteren van aangepaste database & bpmn
 finished_database = json.dumps(database, indent = 4, sort_keys=True)

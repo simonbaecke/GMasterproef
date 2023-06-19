@@ -24,7 +24,7 @@ def rec():
     rainwatertankcapacity_scaled = (rainwatertankcapacity/roofarea)*100
 
 
-    with open(r"C:\Users\simon_w3\OneDrive - UGent\School\Ugent\2de ma ing.-arch\Masterproef\GMasterproef\Final\flask_services\flask_recsubsufarea\flaskr\public\reftable.json", 'r') as table:
+    with open(r"C:\Users\simon_w3\OneDrive - UGent\School\Ugent\2de ma ing.-arch\Masterproef\GMasterproef\Final\flask_services\flask_recsubsufarea\public\reftable.json", 'r') as table:
         data = json.load(table)
     df = pd.DataFrame(data)
 
