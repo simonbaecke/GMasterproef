@@ -24,8 +24,8 @@ def create_app(test_config=None):
     except OSError:
         pass
     
-    from . import recommendedsubtractedinfiltrationarea
-    app.register_blueprint(recommendedsubtractedinfiltrationarea.bp)
+    from . import rec
+    app.register_blueprint(rec.bp)
     
 
     return app

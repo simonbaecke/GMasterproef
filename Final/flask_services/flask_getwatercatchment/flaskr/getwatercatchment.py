@@ -9,16 +9,11 @@ bp = Blueprint('getwatercatchment',__name__)
 def getwatercatchment():
 
     if request.method == "POST":
-        #nog afhankelijk van hoe dat wordt aangeleverd
         data=request.data
         xy = eval(data.decode('utf-8'))
-        xy = eval(xy)
         x=xy[0]
         y=xy[1]
-        print(x)
-        print(y)
         percentencodedxy = urllib.parse.quote(str(x)+' '+str(y))
-        print(percentencodedxy)
     else:
         percentencodedxy=request.args.get("xy")
 
@@ -37,7 +32,7 @@ def getwatercatchment():
 
         if data["totalFeatures"]==0:
             print('lege lijst')
-            Grondwaterwingebied = 0
+            Grondwaterwingebied = 4
         else:
             Grondwaterwingebied = data["features"][0]["properties"]["zone_"]
         return jsonify(Grondwaterwingebied)

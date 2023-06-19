@@ -1,0 +1,66 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+      }
+
+      #diagram-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #diagram {
+        border:1px solid black;
+        width: 95vw; /* 80% of the viewport width */
+        height: 60vh; /* 50% of the viewport height */
+      }
+    </style>
+    -->
+
+    <!-- required modeler styles -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bpmn-js@13.2.0/dist/assets/diagram-js.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bpmn-js@13.2.0/dist/assets/bpmn-js.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bpmn-js@13.2.0/dist/assets/bpmn-font/css/bpmn.css"
+    />
+
+    <title>BPMN processor</title>
+  </head>
+  <body>
+    <h1>Upload Files</h1>
+
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="file" />
+      <input type="submit" value="Upload File" />
+    </form>
+
+    {% if filename %}
+    <p>
+      Download uploaded File 1:
+      <a href="{{ url_for('download_file', name=filename) }}">Download</a>
+    </p>
+    {% endif %}
+
+
+    </body>
+</html>
+
+

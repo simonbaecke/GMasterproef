@@ -1,0 +1,32 @@
+<!-- input.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BPMN processor</title>
+  </head>
+  <body>
+    <h1>Upload Files</h1>
+    {% if file_content %}
+    <pre>{{ file_content }}</pre>
+    {% endif %}
+
+    {% if null_ids %}
+    <h2>Null IDs:</h2>
+    <ul>
+      {% for null_id in null_ids %}
+      <li>{{ null_id }}</li>
+      {% endfor %}
+    </ul>
+
+    <form method="post">
+      {% for item in data %}
+      <p>
+        <label for="{{ item.id }}">{{ item.name }}:</label>
+        <input type="text" name="{{ item.id }}" id="{{ item.id }}" value="{{ item.value }}" />
+      </p>
+      {% endfor %}
+      <input type="submit" value="Submit" />
+    </form>
+    {% endif %}
+  </body>
+</html>
