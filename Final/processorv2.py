@@ -15,17 +15,11 @@ def round_up(n, decimals=0):
 with open(r"C:\Users\simon_w3\OneDrive - UGent\School\Ugent\2de ma ing.-arch\Masterproef\GMasterproef\Final\tests\parameters2.json", 'r') as database:
     database = json.load(database)
 
-bpmn = open(r"C:\Users\simon_w3\OneDrive - UGent\School\Ugent\2de ma ing.-arch\Masterproef\GMasterproef\Final\tests\BPMN\test pools.bpmn",'r').read()
+bpmn = open(r"C:\Users\simon_w3\OneDrive - UGent\School\Ugent\2de ma ing.-arch\Masterproef\GMasterproef\Final\tests\BPMN\test internalvalidation.bpmn",'r').read()
 bsdata=BeautifulSoup(bpmn,'xml')
 data = bsdata.process
 graphics=bsdata.BPMNPlane
 start = data.startEvent
-
-x= 0
-for a in data:
-    x += 1
-
-print(x)
 
 local_dict = {}
 global_dict=globals()
@@ -37,7 +31,6 @@ linecolorid=[]
 wrongoutputlineid = []
 continuenext = True #otherwise a node is skipped after a gateway
 allcallactivities = data.findAll("callActivity") #list of all microservices
-print(len(allcallactivities))
 
 next = start
 while next.name != "endEvent" and errorloop:
@@ -57,7 +50,7 @@ while next.name != "endEvent" and errorloop:
                     annotation  = annotationnode.text
 
 
-                if next.name == "receiveTask": #validation vanuit database nog proberen te fiksen
+                if next.name == "receiveTask":
                     dataobject = data.find('dataObjectReference',attrs = {'id' : next.dataInputAssociation.sourceRef.string})
                     dataobjectid = dataobject["name"]
                     #colors
@@ -74,7 +67,7 @@ while next.name != "endEvent" and errorloop:
                     if dataobjectid[-1:] == "M":
                         endparameters.append(dataobjectid)
 
-                    elif ms: #kleuren van associations nog doen
+                    elif ms:
                         print(local_dict)
                         parameterms = data.find(attrs= {'id' : ms.dataInputAssociation.sourceRef.string})
                         parameteridms = parameterms["name"]
@@ -87,8 +80,9 @@ while next.name != "endEvent" and errorloop:
                                 database[int(dataobjectid[1:])-1]['value']= local_dict[dataobjectid]
                         
                         except:
-                            print('cannot connect to microservice: ' + msurl)
+                            print(f'cannot connect to microservice: {msurl}')
                             errorloop = False
+                            break
                         
                         #colors
                         shapecolorid.append(ms["id"])
@@ -101,12 +95,18 @@ while next.name != "endEvent" and errorloop:
 
                     else:
                         databasevalue = database[int(dataobjectid[1:])-1]['value']
-                        print(databasevalue)
                         if databasevalue is not None:
-                            local_dict[dataobjectid] = databasevalue
+                            validation = database[int(dataobjectid[1:])-1]['validation']
+                            if eval(str(databasevalue) + validation):
+                                local_dict[dataobjectid] = databasevalue
+                            else:
+                                print(f'Parameter {dataobjectid}({databasevalue}) is not valid: {validation}')
+                                errorloop = False
+                                break
                         else:
-                            print(dataobjectid + ' is not valid or absent from the database')
+                            print(f'{dataobjectid} is absent from the database')
                             errorloop = False
+                            break
                     
 
                 elif next.name == "sendTask":
@@ -122,7 +122,7 @@ while next.name != "endEvent" and errorloop:
                     options = [data.find("sequenceFlow", attrs = {"id" : x}) for x in all_outgoing]
                     for flow in options:
                         formula = convertformula(flow)
-                        if eval(formula,global_dict,local_dict) == True:
+                        if eval(formula,global_dict,local_dict):
                             print(formula)
                             next = data.find(attrs={"id" : flow['targetRef']})
                             continuenext = False
@@ -142,6 +142,7 @@ while next.name != "endEvent" and errorloop:
                     if eval(formula,global_dict,local_dict) == False:
                         print(annotation.format(**local_dict))
                         errorloop = False
+                        break
         except:
             pass
 

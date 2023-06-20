@@ -1,66 +1,44 @@
-<!-- index.html -->
-<!DOCTYPE html>
-<html>
-  <head>
-    <!--
-    <style>
-      body,
-      html {
-        height: 100%;
-        margin: 0;
-      }
+{% extends "layout.html" %} {% block style %}
 
-      #diagram-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+<title>Home</title>
 
-      #diagram {
-        border:1px solid black;
-        width: 95vw; /* 80% of the viewport width */
-        height: 60vh; /* 50% of the viewport height */
-      }
-    </style>
-    -->
+{% endblock style %} {% block content %}
+<h1>Upload Files</h1>
 
-    <!-- required modeler styles -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/bpmn-js@13.2.0/dist/assets/diagram-js.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/bpmn-js@13.2.0/dist/assets/bpmn-js.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/bpmn-js@13.2.0/dist/assets/bpmn-font/css/bpmn.css"
-    />
+{% if message %}
+<div class="alert alert-danger mx-auto my-5" role="alert" style="width: 50%">
+  {{ message }}
+</div>
+{% endif %}
 
-    <title>BPMN processor</title>
-  </head>
-  <body>
-    <h1>Upload Files</h1>
+<div class="col-3 mx-auto">
+  <form method="post" enctype="multipart/form-data">
+    <label class="form-label-file">JSON</label>
+    <br />
+    <input class="btn btn-light" type="file" name="json" id="json" />
+    <br />
+    <label class="form-label-file">BPMN</label>
+    <br />
+    <input class="btn btn-light" type="file" name="bpmn" id="bpmn" />
+    <br />
+    <input class="btn btn-outline-dark" type="submit" value="Upload files" />
+  </form>
+</div>
 
-    {% if message %}
-    <p>{{ message }}</p>
-    {% endif %}
+{% if filename %}
+<p>
+  Download uploaded File 1:
+  <a href="{{ url_for('download_file', name=filename) }}">Download</a>
+</p>
+{% endif %} {% if filename2 %}
+<p>
+  Download uploaded File 2:
+  <a href="{{ url_for('download_file', name=filename2) }}">Download</a>
+</p>
+{% endif %} 
 
-    <form method="post" enctype="multipart/form-data">
-      <input type="file" name="file" />
-      <input type="submit" value="Upload File" />
-    </form>
+{% if filepathjson %}
+  <p>{{ filepathjson }}</p>
+{% endif %}
 
-    {% if filename %}
-    <p>
-      Download uploaded File 1:
-      <a href="{{ url_for('download_file', name=filename) }}">Download</a>
-    </p>
-    {% endif %}
-
-
-    </body>
-</html>
-
-
+{% endblock content %}

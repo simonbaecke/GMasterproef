@@ -6,7 +6,7 @@
         "name": "Green roof surface area",
         "unit of measurement": "square meter",
         "validation": ">=0",
-        "value": 500
+        "value": -500
     },
     {
         "data type": "BIM",
@@ -75,10 +75,7 @@
         "id": "G10",
         "name": "Coordinates",
         "unit of measurement": "Lambert72",
-        "value": [
-            108588.48,
-            214985.36
-        ]
+        "value": null
     },
     {
         "data type": "GIS",
@@ -87,7 +84,7 @@
         "name": "Area of building site",
         "unit of measurement": "square meter",
         "validation": ">=0",
-        "value": 520.1599080021549
+        "value": null
     },
     {
         "data type": "GIS",

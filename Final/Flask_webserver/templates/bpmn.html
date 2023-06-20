@@ -1,74 +1,85 @@
-<!-- input.html -->
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      body,
-      html {
-        height: 100%;
-        margin: 0;
-      }
+{% extends "layout.html" %} {% block style %}
 
-      #diagram-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+<title>Results</title>
+<style>
+  body,
+  html {
+    height: 100%;
+    margin: 1, 5%;
+  }
 
-      #diagram {
-        border:1px solid black;
-        width: 95vw; /* 80% of the viewport width */
-        height: 60vh; /* 50% of the viewport height */
-      }
-    </style>
+  #diagram-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    <!-- required modeler styles -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/bpmn-js@13.2.0/dist/assets/diagram-js.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/bpmn-js@13.2.0/dist/assets/bpmn-js.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/bpmn-js@13.2.0/dist/assets/bpmn-font/css/bpmn.css"
-    />
-    <title>BPMN representation</title>
-  </head>
-  <body>
+  #diagram {
+    border: 1px solid black;
+    width: 96vw; /* 80% of the viewport width */
+    height: 60vh; /* 50% of the viewport height */
+  }
+</style>
 
-    <h1>BPMN representation</h1>
+<!-- required modeler styles -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/bpmn-js@13.2.0/dist/assets/diagram-js.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/bpmn-js@13.2.0/dist/assets/bpmn-js.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/bpmn-js@13.2.0/dist/assets/bpmn-font/css/bpmn.css"
+/>
 
-    <div id="diagram-container">
-      <div id="diagram"></div>
-    </div>
+{% endblock style %} {% block content %}
 
-    <!-- modeler distro -->
-    <script src="https://unpkg.com/bpmn-js@13.2.0/dist/bpmn-modeler.development.js"></script>
+<h1>BPMN representation</h1>
 
-    <!-- jquery (required for example only) -->
-    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
+{% if file_path_bpmn %}
+  <p>{{ file_path_bpmn }}</p>
 
-    <!-- app -->
-    <script>
-      var viewer = new BpmnJS({
-        container: "#diagram",
-      });
 
-      async function showDiagram(diagramXML) {
-        await viewer.importXML(diagramXML);
+<div id="diagram-container">
+  <div id="diagram"></div>
+</div>
 
-        var overlays = viewer.get("overlays"),
-          canvas = viewer.get("canvas"),
-          elementRegistry = viewer.get("elementRegistry"),
-          modeling = viewer.get("modeling");
-      }
+<!-- modeler distro -->
+<script src="https://unpkg.com/bpmn-js@13.2.0/dist/bpmn-modeler.development.js"></script>
 
-      // load + show diagram
-      $.get("https://raw.githubusercontent.com/simonbaecke/GMasterproef/main/Final/Input/Building%20scale%2031052023%20without%20old.bpmn",showDiagram);
-    </script>
+<!-- jquery (required for example only) -->
+<script src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
 
-  </body>
-</html>
+<!-- app -->
+<script>
+  var viewer = new BpmnJS({
+    container: "#diagram",
+  });
+
+  async function showDiagram(diagramXML) {
+    await viewer.importXML(diagramXML);
+
+    var overlays = viewer.get("overlays"),
+      canvas = viewer.get("canvas"),
+      elementRegistry = viewer.get("elementRegistry"),
+      modeling = viewer.get("modeling");
+  }
+
+  // load + show diagram
+  $.get("{{ url_for('static', filename=file_path_bpmn) }}", showDiagram);
+</script>
+
+
+{% else %}
+<p>No BPMN file uploaded</p>
+
+{% endif %}
+
+{%if edit %}
+  <p>{{ edit }}</p>
+{% endif %}
+
+{% endblock content %}
