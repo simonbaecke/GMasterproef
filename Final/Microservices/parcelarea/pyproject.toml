@@ -1,0 +1,9 @@
+[project]
+name = "parcelarea"
+version = "1.0.0"
+dependencies = [
+    "flask",
+    "requests",
+    "urllib3",
+    "shapely"
+]

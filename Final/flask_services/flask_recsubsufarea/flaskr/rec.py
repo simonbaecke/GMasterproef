@@ -53,7 +53,7 @@ def rec():
     roofarea_sub_scaled = y.loc[hergebruik,hemelwaterput]
     print(roofarea_sub_scaled)
 
-    if roofarea_sub_scaled == "nan":
+    if str(roofarea_sub_scaled) == "nan":
         roofarea_sub = roofarea
     else:
         roofarea_sub = roofarea_sub_scaled*roofarea/100

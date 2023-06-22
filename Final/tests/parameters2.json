@@ -1,7 +1,7 @@
 [
   {
     "id": "B1",
-    "value": null,
+    "value": 500,
     "validation": ">=0",
     "unit of measurement": "square meter",
     "data type": "BIM",
@@ -26,7 +26,7 @@
   },
   {
     "id": "R4",
-    "value": 10000,
+    "value": null,
     "unit of measurement": "liter",
     "data type": "Rainwater Regulation",
     "name": "Minimum capacity rainwater tank",

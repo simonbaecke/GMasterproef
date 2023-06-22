@@ -1,0 +1,8 @@
+[project]
+name = "template-microservice-py"
+version = "1.0.0"
+dependencies = [
+    "flask",
+    "requests",
+    "urllib3"
+]

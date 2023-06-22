@@ -1,0 +1,8 @@
+[project]
+name = "coordinateconversion"
+version = "1.0.0"
+dependencies = [
+    "flask",
+    "requests",
+    "urllib3"
+]

@@ -75,7 +75,7 @@
     "unit of measurement": "Lambert72",
     "data type": "GIS",
     "name": "Coordinates",
-    "description": "x & y coordinates of center of building site in Lambert72/EPSG:3137null"
+    "description": "x & y coordinates of center of building site in Lambert72/EPSG:3137"
   },
   {
     "id": "G11",
@@ -165,8 +165,8 @@
     "value": null,
     "unit of measurement": "square meter",
     "data type": "Rainwater Regulation",
-    "name": "Corrected sum drainage surface areas",
-    "description": "Corrected sum of the drainage surface areas, corrected with the capacity of the rainwater tank taken into account"
+    "name": "Subtractable drainage surface area",
+    "description": "Subtractable drainage surface area due to the capacity of the rainwater tank"
   },
   {
     "id": "R22",

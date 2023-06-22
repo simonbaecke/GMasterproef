@@ -1,16 +1,27 @@
 import math
+import json
 
 def round_up(n, decimals=0):
     multiplier = 10 ** decimals
     return math.ceil(n * multiplier) / multiplier
 
-locald = {"B2":20,"B1":10, "A20": 300}
-globalsd = globals()
+with open(r"C:\Users\simon_w3\OneDrive - UGent\School\Ugent\2de ma ing.-arch\Masterproef\GMasterproef\Final\Input\reftable.json", 'r') as p:
+  data = json.load(p)
+
+  print(list((data.keys()))[1:])
+  newdata = {'hergebruik' : data['hergebruik']}
+
+  for key in list(data.keys())[1:]:
+    x =  data[key]
+    lijst = []
+    for nummer in x:
+        newnummer = round(100 - nummer,2)
+        lijst.append(newnummer)
+    newdata[key] = lijst
 
 
-b="R4 = min(10000,round_up((B2-B1)*50,-3))"
+datajson = json.dumps(newdata, indent = 4)
 
-exec(b,globalsd,locald)
-
-
-print(eval("[B2-B1,A20]",locald))
+print(datajson)
+with open(r"C:\Users\simon_w3\OneDrive - UGent\School\Ugent\2de ma ing.-arch\Masterproef\GMasterproef\Final\Input\reftableinverted.json", 'w') as json_file:
+  json_file.write(datajson)

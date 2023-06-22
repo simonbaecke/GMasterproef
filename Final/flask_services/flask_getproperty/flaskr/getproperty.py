@@ -20,7 +20,7 @@ def getpropertyarea():
 
     url = "https://geo.api.vlaanderen.be/GRB/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=GRB:ADP&outputFormat=application/json&CQL_FILTER=CONTAINS(SHAPE,POINT(lambert72coordinates))".replace('lambert72coordinates',percentencodedxy)
     
-    #omzeilen bescherming tegen script
+    #bypass script protection
     user_agent = 'Mozilla/5.0'
     response = requests.get(url, headers={'User-Agent': user_agent})
 
@@ -32,8 +32,8 @@ def getpropertyarea():
 
         coords = data["features"][0]['geometry']['coordinates'][0]
 
-        perceel = Polygon(coords)
-        area = perceel.area    
+        parcel = Polygon(coords)
+        area = parcel.area    
         return jsonify(area)
     else:
         response.raise_for_status()
