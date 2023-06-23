@@ -28,13 +28,13 @@
     </form>
     <div style="text-align: center">
         <button style="width: 12vw" form="building"
-            class="btn{% if example == 'building' %} btn-dark {% else %} btn-outline-dark {% endif %}mb-3"
+            class="btn{% if example == 'building' %} btn-dark {% else %} btn-outline-dark {% endif %}mb-3 mr-2"
             type="submit">Building scale BPMN</button>
         <button style="width: 12vw" form="parcel"
             class="btn{% if example == 'parcel' %} btn-dark {% else %} btn-outline-dark {% endif %}mb-3"
             type="submit">Parcel scale BPMN</button>
         <br>
-        <a style="width: 12vw" class="btn btn-dark mb-3{% if not filenamebpmn %} disabled"
+        <a style="width: 12vw" class="btn btn-dark mb-3 mr-2{% if not filenamebpmn %} disabled"
             aria-disabled="true {% endif %}" role="button" href="{{url_for('input')}}">Fill in parameters</a>
         <button style="width: 12vw" form="performcheck" type="submit" class="btn btn-dark mb-3" {% if not filenamebpmn
             %} disabled {% endif %}>Check compliance</button>
